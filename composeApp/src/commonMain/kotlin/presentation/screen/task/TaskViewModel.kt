@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class TaskViewModel(
     private val mongoDB: MongoDB
-): ScreenModel {
+) : ScreenModel {
 
     fun setAction(action: TaskAction) {
         when (action) {
