@@ -1,5 +1,4 @@
 *.iml
-.kotlin
 .gradle
 **/build/
 xcuserdata
