@@ -12,3 +12,6 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
 
 
 Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+
+
+![9233841_4120164](https://github.com/user-attachments/assets/751e0101-23d0-46cb-8fe0-22aa2d82f2db)
