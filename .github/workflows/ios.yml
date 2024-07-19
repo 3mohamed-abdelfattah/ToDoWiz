@@ -23,13 +23,17 @@ jobs:
       run: |
         brew install kotlin
         brew install cocoapods
-        cd iosApp
-        pod install
+
+    - name: Install CocoaPods dependencies
+      run: pod install
+      working-directory: iosApp
 
     - name: Build iOS app
       run: |
         xcodebuild -workspace iosApp.xcworkspace -scheme iosApp -sdk iphonesimulator -configuration Debug build
+      working-directory: iosApp
 
     - name: Run iOS tests
       run: |
         xcodebuild test -workspace iosApp.xcworkspace -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5'
+      working-directory: iosApp
