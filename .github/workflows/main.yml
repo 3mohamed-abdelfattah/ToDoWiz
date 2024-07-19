@@ -1,0 +1,35 @@
+name: Build and Test iOS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+
+    - name: Install dependencies
+      run: |
+        brew install kotlin
+        brew install cocoapods
+        cd iosApp
+        pod install
+
+    - name: Build iOS app
+      run: |
+        xcodebuild -workspace iosApp.xcworkspace -scheme iosApp -sdk iphonesimulator -configuration Debug build
+
+    - name: Run iOS tests
+      run: |
+        xcodebuild test -workspace iosApp.xcworkspace -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5'
