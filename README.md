@@ -17,7 +17,7 @@ Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-mu
 
 # ToDoWiz
 
-Welcome to ToDoWave, your ultimate task management app for tracking tasks, organizing your schedule, and staying productive.
+Welcome to ToDoWiz, your ultimate task management app for tracking tasks, organizing your schedule, and staying productive.
 
 ## Table of Contents
 
