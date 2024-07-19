@@ -17,7 +17,7 @@ import presentation.screen.home.HomeViewModel
 import presentation.screen.task.TaskViewModel
 
 val lightRedColor = Color(color = 0xFF124076)
-val darkRedColor = Color(color = 0xFFF9E897)
+val darkRedColor = Color(color = 0xFFFFC374)
 
 @Composable
 @Preview

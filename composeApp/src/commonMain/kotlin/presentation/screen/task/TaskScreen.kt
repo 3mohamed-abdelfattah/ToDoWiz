@@ -29,8 +29,8 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import domain.TaskAction
 import domain.ToDoTask
 
-const val DEFAULT_TITLE = "Enter the Title"
-const val DEFAULT_DESCRIPTION = "Add some description"
+const val DEFAULT_TITLE = "Enter Task Title"
+const val DEFAULT_DESCRIPTION = "Add Task Description..."
 
 data class TaskScreen(val task: ToDoTask? = null) : Screen {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -52,6 +52,7 @@ data class TaskScreen(val task: ToDoTask? = null) : Screen {
                         BasicTextField(
                             textStyle = TextStyle(
                                 color = MaterialTheme.colorScheme.onSurface,
+                                fontWeight = MaterialTheme.typography.titleLarge.fontWeight,
                                 fontSize = MaterialTheme.typography.titleLarge.fontSize
                             ),
                             singleLine = true,
@@ -95,7 +96,7 @@ data class TaskScreen(val task: ToDoTask? = null) : Screen {
                             }
                             navigator.pop()
                         },
-                        shape = RoundedCornerShape(size = 12.dp)
+                        shape = RoundedCornerShape(size = 15.dp)
                     ) {
                         Icon(
                             imageVector = Icons.Default.Check,

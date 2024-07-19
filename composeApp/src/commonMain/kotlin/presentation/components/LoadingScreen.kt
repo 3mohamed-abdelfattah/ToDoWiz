@@ -18,6 +18,6 @@ fun LoadingScreen() {
             .padding(all = 24.dp),
         contentAlignment = Alignment.Center
     ) {
-        CircularProgressIndicator(modifier = Modifier.size(28.dp))
+        CircularProgressIndicator(modifier = Modifier.size(30.dp))
     }
 }

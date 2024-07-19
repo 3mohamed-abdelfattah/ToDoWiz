@@ -27,8 +27,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
@@ -52,12 +54,18 @@ class HomeScreen : Screen {
 
         Scaffold(
             topBar = {
-                CenterAlignedTopAppBar(title = { Text(text = "Home") })
+                CenterAlignedTopAppBar(title = {
+                    Text(
+                        text = "ToDo Wiz",
+                        fontWeight = FontWeight.W700,
+                        color = Color(0xFF124076)
+                    )
+                })
             },
             floatingActionButton = {
                 FloatingActionButton(
                     onClick = { navigator.push(TaskScreen()) },
-                    shape = RoundedCornerShape(size = 12.dp)
+                    shape = RoundedCornerShape(size = 15.dp)
                 ) {
                     Icon(
                         imageVector = Icons.Default.Edit,
@@ -167,8 +175,9 @@ fun DisplayTasks(
         Text(
             modifier = Modifier.padding(horizontal = 12.dp),
             text = if (showActive) "Active Tasks" else "Completed Tasks",
-            fontSize = MaterialTheme.typography.titleMedium.fontSize,
-            fontWeight = FontWeight.Medium
+            fontSize = 18.sp,
+            fontWeight = FontWeight.W700,
+            color = MaterialTheme.colorScheme.primary
         )
         Spacer(modifier = Modifier.height(12.dp))
         tasks.DisplayResult(

@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import domain.ToDoTask
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
@@ -53,7 +54,7 @@ fun TaskView(
             Text(
                 modifier = Modifier.alpha(if (showActive) 1f else 0.5f),
                 text = task.title,
-                fontSize = MaterialTheme.typography.bodyMedium.fontSize,
+                fontSize = 16.sp,
                 textDecoration = if (showActive) TextDecoration.None
                 else TextDecoration.LineThrough
             )
@@ -70,7 +71,7 @@ fun TaskView(
                     else Res.drawable.delete
                 ),
                 contentDescription = "Favorite Icon",
-                tint = if (task.favorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface.copy(
+                tint = if (task.favorite) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface.copy(
                     alpha = 0.38f
                 )
             )
